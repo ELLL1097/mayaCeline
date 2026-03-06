@@ -14,19 +14,24 @@ align-items:center;
 }
 
 /* container seperti layar hp */
-.phone{
-width:360px;
-height:640px;
-background:#1e3a8a;
-border-radius:25px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-color:white;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
-padding:20px;
+
+/* Update bagian .phone kamu */
+.phone {
+    width: 360px; /* Default untuk tampilan laptop */
+    max-width: 100%; /* Biar nggak luber di layar kecil */
+    height: 640px;
+    background: #1e3a8a;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    padding: 20px;
+    transition: 0.3s;
 }
+
 
 .phone h2{
 margin-bottom:20px;
@@ -356,4 +361,20 @@ cursor:pointer;
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+
+}
+
+/* Tambahkan ini di paling bawah CSS untuk handle tampilan HP */
+@media screen and (max-width: 480px) {
+    body {
+        align-items: flex-start; /* Biar nggak terlalu ke tengah vertikal di HP */
+        padding: 0;
+    }
+
+    .phone {
+        width: 100vw;   /* Lebar full layar HP */
+        height: 100vh;  /* Tinggi full layar HP */
+        border-radius: 0; /* Hilangkan lengkungan biar beneran fullscreen */
+        box-shadow: none;
+    }
 }
