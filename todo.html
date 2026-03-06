@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone">
+    <div class="back-container">
+        <button onclick="window.location.href='menu.html'">← Back</button>
+    </div>
+
+    <h2 class="judul-foto">💌 To Do List</h2>
+
+    <div class="todo-input-group">
+        <input type="text" id="todoInput" placeholder="Tulis rencana kita...">
+        <button id="addBtn">Tambah</button>
+    </div>
+
+    <ul id="todoList" class="todo-list">
+        </ul>
+</div>
+
+<script>
+    const input = document.getElementById('todoInput');
+    const addBtn = document.getElementById('addBtn');
+    const todoList = document.getElementById('todoList');
+
+    // Load data dari LocalStorage
+    let todos = JSON.parse(localStorage.getItem('myTodos')) || [];
+
+    function renderTodos() {
+        todoList.innerHTML = '';
+        todos.forEach((todo, index) => {
+            const li = document.createElement('li');
+            li.className = 'todo-item';
+            li.innerHTML = `
+                <span>${todo}</span>
+                <button onclick="deleteTodo(${index})">❌</button>
+            `;
+            todoList.appendChild(li);
+        });
+        localStorage.setItem('myTodos', JSON.stringify(todos));
+    }
+
+    addBtn.onclick = () => {
+        if (input.value.trim() !== "") {
+            todos.push(input.value);
+            input.value = '';
+            renderTodos();
+        }
+    };
+
+    function deleteTodo(index) {
+        todos.splice(index, 1);
+        renderTodos();
+    }
+
+    renderTodos();
+</script>
+
+</body>
+</html>

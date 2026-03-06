@@ -1,0 +1,359 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* container seperti layar hp */
+.phone{
+width:360px;
+height:640px;
+background:#1e3a8a;
+border-radius:25px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+padding:20px;
+}
+
+.phone h2{
+margin-bottom:20px;
+}
+
+.pengantar{
+    margin-bottom: 40px;
+    font-family: 'Georgia';
+    text-align: center;
+
+}
+
+.password {
+margin-bottom:20px;
+color:#bfdbfe;
+font-family: 'Georgia';
+text-align: center;
+}
+
+/* input password */
+input{
+width:80%;
+padding:12px;
+border-radius:10px;
+border:none;
+outline:none;
+margin-bottom:20px;
+font-size:16px;
+}
+
+/* tombol */
+button{
+width:80%;
+padding:12px;
+background:#2563eb;
+border:none;
+border-radius:10px;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#3b82f6;
+}
+
+.buatan {
+    margin-top: 20%;
+    font-family: 'Times New Roman';
+    font-size: 16px
+}
+
+/* menu */
+
+.menu-container{
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:15px;
+margin-top:20px;
+}
+
+.menu-btn{
+width:80%;
+padding:14px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+text-align:center;
+border-radius:12px;
+font-size:16px;
+transition:0.2s;
+}
+
+.menu-btn:hover{
+background:#3b82f6;
+}
+
+.phone img{
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+/* tombol back */
+
+.back-container{
+width:100%;
+margin-bottom:10px;
+text-align: left;
+}
+
+.back-container button{
+width:auto;
+padding:6px 12px;
+background:#2563eb;
+border:none;
+border-radius:8px;
+color:white;
+cursor:pointer;
+font-size:14px;
+display:inline-block;
+}
+
+/* judul foto */
+
+.judul-foto{
+text-align:center;
+margin-bottom:20px;
+}
+/* gallery */
+
+.gallery{
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+overflow-y:auto;
+padding:5px;
+}
+
+/* foto */
+
+.gallery img{
+width:100%;
+height:120px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* music list */
+
+.music-list{
+width:100%;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+/* setiap lagu */
+
+.music-item{
+background:#1e3a8a;
+padding:12px;
+border-radius:10px;
+text-align:center;
+}
+
+/* judul lagu */
+
+.music-item p{
+margin-bottom:8px;
+color:white;
+}
+
+/* audio player */
+
+.music-item audio{
+width:100%;
+}
+
+/* canvas game */
+
+canvas{
+background:#0f172a;
+border:4px solid #2563eb;
+border-radius:10px;
+display:block;
+margin:auto;
+margin-top:10px;
+}
+
+/* kontrol hp */
+.controls {
+    display: flex;
+    justify-content: space-around; /* Bikin jaraknya seimbang kiri & kanan */
+    width: 100%;                  /* Biar menuhin lebar container phone */
+    margin-top: 10px;             /* Kurangi margin atas biar naik sedikit */
+    margin-bottom: 20px;          /* Jarak dari bawah frame */
+}
+
+.left-controls,
+.right-controls {
+    display: flex;
+    gap: 8px;
+    width: auto;
+}
+
+/* Hapus margin 20% yang lama karena bikin layout berantakan */
+.left-controls {
+    margin-right: 0; 
+}
+
+.right-controls {
+    margin-left: 0;
+}
+
+.controls button {
+    width: 50px;      /* Sedikit lebih besar biar enak dipencet di HP */
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%; /* Ubah jadi bulat biar lebih estetik ala game console */
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* popup kalah */
+
+.popup{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.6);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+}
+
+.popup-box{
+
+background:white;
+padding:20px;
+border-radius:10px;
+
+text-align:center;
+
+width:80%;
+max-width:300px;
+
+}
+
+.popup-box h2{
+margin-bottom:10px;
+color: black;
+}
+
+.popup-box p {
+    color: black;
+}
+
+.popup-btn{
+margin-top:15px;
+display:flex;
+gap:10px;
+justify-content:center;
+}
+
+.popup-btn button{
+
+padding:8px 14px;
+border:none;
+
+background:#2563eb;
+color:white;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+/* --- Tambahan untuk To Do List --- */
+
+.todo-input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-input-group input {
+    margin-bottom: 0; /* Override margin lama */
+    width: 100%;
+}
+
+.todo-input-group button {
+    width: 100%;
+}
+
+.todo-list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+    max-height: 300px; /* Supaya bisa di-scroll kalau banyak */
+}
+
+.todo-item {
+    background: #1e40af; /* Warna biru sedikit beda biar kontras */
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    animation: fadeIn 0.3s ease;
+}
+
+.todo-item button {
+    width: auto;
+    padding: 5px 10px;
+    background: #ef4444; /* Warna merah untuk hapus */
+    font-size: 12px;
+}
+
+.todo-item button:hover {
+    background: #dc2626;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

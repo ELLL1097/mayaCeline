@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Snake Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone">
+
+<div class="back-container">
+<button onclick="goBack()">← Back</button>
+</div>
+
+<h2 class="judul-foto">Snake Game 🐍</h2>
+
+<canvas id="game" width="300" height="300"></canvas>
+
+<div id="gameOverPopup" class="popup">
+
+  <div class="popup-box">
+    <h2>Kamu kalah 😢</h2>
+
+    <p>
+    Gapapa kamu cuma kalah di game  
+    tapi nggak kalah di hati aku ❤️
+    </p>
+
+    <div class="popup-btn">
+      <button onclick="restartGame()">Restart</button>
+      <button onclick="goMenu()">Kembali Ke Menu</button>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="controls">
+
+<div class="left-controls">
+<button onclick="moveLeft()">◀</button>
+<button onclick="moveRight()">▶</button>
+</div>
+
+<div class="right-controls">
+<button onclick="moveUp()">▲</button>
+<button onclick="moveDown()">▼</button>
+</div>
+
+</div>
+
+</div>
+
+<script src="snake.js"></script>
+
+<script>
+function goBack(){
+window.location.href="menu.html";
+}
+</script>
+
+</body>
+</html>
